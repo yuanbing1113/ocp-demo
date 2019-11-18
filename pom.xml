@@ -41,6 +41,11 @@
 			<plugin>
 				<groupId>io.fabric8</groupId>
 				<artifactId>fabric8-maven-plugin</artifactId>
+				<configuration>
+				<ports>
+					<port>9080</port>
+				</ports>
+				</configuration>
 				<version>4.3.1</version>
 			</plugin>
 		</plugins>
