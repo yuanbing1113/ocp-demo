@@ -42,9 +42,14 @@
 				<groupId>io.fabric8</groupId>
 				<artifactId>fabric8-maven-plugin</artifactId>
 				<configuration>
-				<ports>
-					<port>9080</port>
-				</ports>
+					<enricher>
+						<config>
+							<fmp-service>
+								<name>ocp-demo</name>
+								<port>9080:9080</port>
+							</fmp-service>
+						</config>
+					</enricher>
 				</configuration>
 				<version>4.3.1</version>
 			</plugin>
