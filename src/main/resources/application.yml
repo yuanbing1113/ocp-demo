@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    active: local
+---
+spring:
+  profiles: local
+  application:
+    name: ocp-demo
+server:
+  port: 8080
+
+---
+spring:
+  profiles: k8s
+  application:
+    name: ocp-demo
+server:
+  port: 9080
