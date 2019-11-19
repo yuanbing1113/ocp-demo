@@ -38,24 +38,52 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-<!-- 			<plugin>
+			<plugin>
 				<groupId>io.fabric8</groupId>
 				<artifactId>fabric8-maven-plugin</artifactId>
+				<version>4.3.1</version>
 				<configuration>
+					<generator>
+						<config>
+							<spring-boot>
+								<from>fabric8/s2i-java:latest</from>
+							</spring-boot>
+						</config>
+					</generator>
 					<env>
 						<spring_profiles_active>k8s</spring_profiles_active>
 					</env>
-					<enricher>
-						<config>
-							<fmp-service>
+					<resources>
+						<labels>
+							<all>
+								<group>quickstarts</group>
+							</all>
+						</labels>
+
+						<deployment>
+							<name>${project.artifactId}</name>
+							<replicas>1</replicas>
+
+							<containers>
+								<container>
+									<ports>
+										<port>9080</port>
+									</ports>
+								</container>
+							</containers>
+						</deployment>
+
+						<services>
+							<service>
 								<name>ocp-demo</name>
-								<port>9080:9080</port>
-							</fmp-service>
-						</config>
-					</enricher>
+								<ports>
+									<port>9080:9080</port>
+								</ports>
+							</service>
+						</services>
+					</resources>
 				</configuration>
-				<version>4.3.1</version>
-			</plugin> -->
+			</plugin>
 		</plugins>
 	</build>
 </project>
