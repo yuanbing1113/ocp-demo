@@ -38,7 +38,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
+<!-- 			<plugin>
 				<groupId>io.fabric8</groupId>
 				<artifactId>fabric8-maven-plugin</artifactId>
 				<configuration>
@@ -55,7 +55,7 @@
 					</enricher>
 				</configuration>
 				<version>4.3.1</version>
-			</plugin>
+			</plugin> -->
 		</plugins>
 	</build>
 </project>
